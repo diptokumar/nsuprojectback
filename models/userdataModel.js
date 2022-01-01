@@ -10,6 +10,11 @@ const userdata = new mongoose.Schema({
     type: String,
     required: [true, 'Please tell us your NsuId!']
   },
+  category: {
+    ref: 'User',
+    type: Schema.Types.ObjectId
+
+  },
 
   email: {
     type: String,
@@ -83,4 +88,7 @@ const userdata = new mongoose.Schema({
   photo: String,
   
 });
-module.exports = userdata
+
+const User = mongoose.model('Userdata', userdata);
+
+module.exports = User
