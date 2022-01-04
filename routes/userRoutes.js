@@ -12,6 +12,7 @@ router.post('/login', authController.login);
 router.post('/datamodel', dataController.createdata);
 router.post('/getdata', dataController.getalldata);
 
+router.get('/getallsearchdata', dataController.filterddata);
 
 
 router.post('/forgotPassword', authController.forgotPassword);
