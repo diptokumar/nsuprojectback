@@ -38,7 +38,7 @@ exports.filterddata = catchAsync(async (req, res, next) => {
     if(catname.catName === 'education'){
         const studentInfo = await DataModel.findOne({
             nsuid: studentid
-        }).select('-');
+        }).select('name email nsuid address mobileno bloodgroup gender dateofbirth fathername mothername nidno nationality nationality major minor cgpa dateofenrollment dateofcomplettion status');
         res.status(201).json({
             message: 'success',
             length: data.length,
@@ -47,7 +47,7 @@ exports.filterddata = catchAsync(async (req, res, next) => {
     }else if(catname.catName === 'health'){
         const studentInfo = await DataModel.findOne({
             nsuid: studentid
-        }).select('-');
+        }).select('name email address mobileno bloodgroup gender dateofbirth');
         res.status(201).json({
             message: 'success',
             length: data.length,
@@ -56,7 +56,7 @@ exports.filterddata = catchAsync(async (req, res, next) => {
     }else if(catname.catName === 'adminestration'){
         const studentInfo = await DataModel.findOne({
             nsuid: studentid
-        }).select('-');
+        }).select('name email nsuid address mobileno bloodgroup gender dateofbirth fathername mothername nidno nationality nationality');
         res.status(201).json({
             message: 'success',
             length: data.length,
