@@ -44,7 +44,7 @@ exports.filterddata = catchAsync(async (req, res, next) => {
             length: data.length,
             data
         })
-    }else if(catname.catName === 'education'){
+    }else if(catname.catName === 'health'){
         const studentInfo = await DataModel.findOne({
             nsuid: studentid
         }).select('-');
@@ -53,7 +53,7 @@ exports.filterddata = catchAsync(async (req, res, next) => {
             length: data.length,
             data
         })
-    }else if(catname.catName === ''){
+    }else if(catname.catName === 'adminestration'){
         const studentInfo = await DataModel.findOne({
             nsuid: studentid
         }).select('-');
