@@ -10,11 +10,11 @@ const userdata = new mongoose.Schema({
     type: String,
     required: [true, 'Please tell us your NsuId!']
   },
-  category: {
-    ref: 'User',
-    type: Schema.Types.ObjectId
+  // category: {
+  //   ref: 'User',
+  //   type: Schema.Types.ObjectId
 
-  },
+  // },
 
   email: {
     type: String,
