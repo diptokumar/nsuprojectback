@@ -39,28 +39,28 @@ exports.filterddata = catchAsync(async (req, res, next) => {
         const studentInfo = await DataModel.findOne({
             nsuid: studentid
         }).select('name email nsuid address mobileno bloodgroup gender dateofbirth fathername mothername nidno nationality nationality major minor cgpa dateofenrollment dateofcomplettion status');
-        res.status(201).json({
+        res.status(200).json({
             message: 'success',
-            length: data.length,
-            data
+            length: studentInfo.length,
+            studentInfo
         })
     }else if(catname.catName === 'health'){
         const studentInfo = await DataModel.findOne({
             nsuid: studentid
         }).select('name email address mobileno bloodgroup gender dateofbirth');
-        res.status(201).json({
+        res.status(200).json({
             message: 'success',
-            length: data.length,
-            data
+            length: studentInfo.length,
+            studentInfo
         })
     }else if(catname.catName === 'adminestration'){
         const studentInfo = await DataModel.findOne({
             nsuid: studentid
         }).select('name email nsuid address mobileno bloodgroup gender dateofbirth fathername mothername nidno nationality nationality');
-        res.status(201).json({
+        res.status(200).json({
             message: 'success',
-            length: data.length,
-            data
+            length: studentInfo.length,
+            studentInfo
         })
     }
 })
