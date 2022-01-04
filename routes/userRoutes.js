@@ -10,7 +10,9 @@ router.post('/signup', authController.signup);
 router.post('/login', authController.login);
 
 router.post('/datamodel', dataController.createdata);
-router.post('/getdata', dataController.getalldata);
+router.get('/getdata', dataController.getalldata);
+
+router.post('/categorydata', dataController.createcategorydata);
 
 router.get('/getallsearchdata', dataController.filterddata);
 
